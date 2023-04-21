@@ -54,12 +54,29 @@ const totalYears = inventors.reduce((total, inventor) =>{
 }, 0)
 console.table(totalYears);
 
+
+// sort the inventor by the year lived
 const oldest = inventors.sort(function(a, b){
     const lastGuy = a.passed - a.year;
     const nextGuy = b.passed - b.year;
     return lastGuy > nextGuy ? -1 : 1
 })
-console.log(oldest)
+console.table(oldest)
+
+// create a list of boulevards in paris that contains "de" anywhere in the name
+
+// const category = document.querySelector('.mw-category');
+// const links = Array.from(category.querySelectorAll('a'))
+
+// const de = links.map(link => link.textContent);
+
+// sort the people alphabetically
+const alph = people.sort(function(nastOne, nextOne) {
+ const [aLast, aFirst] = lastOne.split(',')
+ const[bLast, bFirst] = nextOne.split(',')
+ return aLast > bLast ? 1 : -1;
+})
+console.log(alpha)
    </script>
 </body>
 </html>
