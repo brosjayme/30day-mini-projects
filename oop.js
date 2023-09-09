@@ -87,37 +87,72 @@
 //   },
 // };
 
-class Character {
-  constructor(name, weapon) {
-    this.name = name;
-    this.weapon = weapon;
-  }
+//
+
+//OOP in React.js
+
+//OOP Pillers
+
+//
+
+//no side effects
+//input --> output
+
+function a(num1, num2) {
+  return num1 + num2;
 }
 
-class Elf extends Character {
-  constructor(name, weapon, type) {
-    super(name, weapon);
-    this.name = name;
-    this.weapon = weapon;
-    this.type = type;
-  }
-  attack() {
-    return "attack with" + this.weapon;
-  }
+function b(num) {
+  return num * 2;
 }
 
-class Ogre extends Character {
-  constructor(name, weapon, color) {
-    super(name, weapon);
-    this.name = name;
-    this.weapon = weapon;
-    this.color = color;
-  }
-  makeTent() {
-    return "makes the best tents in world";
-  }
+b(7);
+
+// idempotence:
+function notGood(num) {
+  return math.random(num);
+}
+notGood(5);
+
+// example2
+Math.abs(Math.abs(-50));
+
+//Imperative vs Declarative
+
+for (let i = 0; i < 1000; i++) {
+  console.log(i);
 }
 
-const fiona = new Elf("Fiona", "ninja stars", "house");
-const dolby = new Ogre("dolby", "cloth", "blue");
-fiona;
+[1, 2, 3].forEach((item) => console.log(item));
+
+// immutabiliy
+
+const obj = { name: "john" };
+function clone(obj) {
+  return { ...obj }; //this is pure.
+}
+function updateName(obj) {
+  const obj2 = clone(obj);
+  obj2.name = "Okoro";
+  return obj2;
+}
+const updateObj = updateName(obj);
+console.log(obj, updateObj);
+
+//HOF
+const hof = (fn) => fn(5);
+hof(function a(x) {
+  return x;
+});
+//Closure
+const Closure = function () {
+  let count = 55;
+  return function increment() {
+    count++;
+    return count;
+  };
+};
+
+const getCounter = closure();
+getCounter();
+getCounter();
