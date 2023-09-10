@@ -156,3 +156,17 @@ const Closure = function () {
 const getCounter = closure();
 getCounter();
 getCounter();
+
+//Currying
+// const mulltiply (a, b) =>a*b;
+// mulltiply(4,8);
+
+const curreidMultiply = (a) => (b) => a * b;
+curreidMultiply(8)(3);
+
+// best use of currying
+const curreidMultiplyBy8 = curreidMultiply(a)(b);
+
+// it can be reused in foreseeable future
+curreidMultiplyBy8(3);
+curreidMultiplyBy8(7);
