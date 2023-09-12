@@ -194,25 +194,37 @@
 //  addTo80(5);
 //   addTo80(5);
 
-// now doing the same thing with caching
+// // now doing the same thing with caching
 
-function addTo80(n) {
-  console.log("long time");
-  return n + 80;
-}
-function memoizedAddTo80() {
-  let cache = {};
-  return function (n) {
-    if (n in cache) {
-      return cache[n];
-    } else {
-      console.log("long time");
-      cache[n] = n + 80;
-      return cache[n];
-    }
-  };
-}
-const memoized = memoizedAddTo80();
+// function addTo80(n) {
+//   console.log("long time");
+//   return n + 80;
+// }
+// function memoizedAddTo80() {
+//   let cache = {};
+//   return function (n) {
+//     if (n in cache) {
+//       return cache[n];
+//     } else {
+//       console.log("long time");
+//       cache[n] = n + 80;
+//       return cache[n];
+//     }
+//   };
+// }
+// const memoized = memoizedAddTo80();
 
-console.log("1", memoized(4));
-console.log("2", memoized(4));
+// console.log("1", memoized(4));
+// console.log("2", memoized(4));
+
+// // Compose
+// // data --> fn --> data --> fn -->
+// //pipe
+// // fn1(fn2(fn3(50)))
+// const compose = (f, g) => (data) => f(g(data))
+// const pipe = (f, g) => (data) => g(f(data));
+// const multiplyBy3 = (num) => num*3;
+// const makePositive= (num) => Math.abs
+// const multiplyBy3AndAbsolute = compose(multiplyBy3, makePositive)
+
+// multiplyBy3AndAbsolute(-50)
