@@ -1,4 +1,4 @@
 function getSum(a, b) {
-  return 3 + 8;
+  const result = getSum(4 + 6);
 }
-module.exports = getSum;
+console.log(result);
